@@ -84,33 +84,7 @@ Este es el flujo que quiero que Meridian haga natural. No se trata de investigar
 
 La investigación es solo una parte. Para que un agente pueda trabajar de verdad necesita estar conectado a un espacio, tener contexto, usar herramientas con permisos claros y saber cuándo debe pedir aprobación.
 
-```mermaid
-flowchart LR
-    U["PERSONA\nintención"]:::person <--> W["WORKSPACE\npáginas y proyectos"]:::workspace
-    C["CONTEXTO"]:::context --> M(("MERIDIAN\nAGENT OS")):::core
-    W --> M
-    K["MEMORIA"]:::memory --> M
-    P["PERMISOS"]:::permission --> M
-    T["TOOLS\nWeb · GitHub · MCP"]:::tools --> M
-    M --> A["APROBACIÓN\nsi hace falta"]:::approval
-    M --> R["CONSTRUIR → PROBAR → EXPLICAR"]:::result
-    A -. "la persona siempre puede intervenir" .-> U
-
-    classDef person fill:#db2777,stroke:#f9a8d4,color:#ffffff,stroke-width:3px;
-    classDef workspace fill:#16a34a,stroke:#bbf7d0,color:#ffffff,stroke-width:3px;
-    classDef context fill:#2563eb,stroke:#bfdbfe,color:#ffffff,stroke-width:3px;
-    classDef core fill:#f97316,stroke:#fed7aa,color:#ffffff,stroke-width:5px;
-    classDef memory fill:#7c3aed,stroke:#ddd6fe,color:#ffffff,stroke-width:3px;
-    classDef permission fill:#e11d48,stroke:#fecdd3,color:#ffffff,stroke-width:3px;
-    classDef tools fill:#0891b2,stroke:#a5f3fc,color:#06202a,stroke-width:3px;
-    classDef approval fill:#c026d3,stroke:#f5d0fe,color:#ffffff,stroke-width:3px;
-    classDef result fill:#ca8a04,stroke:#fef08a,color:#422006,stroke-width:3px;
-    linkStyle default stroke:#64748b,stroke-width:2px;
-```
-
-
-
-La idea es que el agente no sea una caja que recibe una orden y escupe código. Debe trabajar dentro de un sistema: entender el contexto, recordar las decisiones, usar las herramientas correctas, respetar permisos, consultar a la persona y dejar un resultado que se pueda revisar.
+La idea es que el agente no sea una caja que recibe una orden y escupe código. Debe trabajar dentro de un sistema: la persona aporta intención, el workspace conserva el contexto, la memoria guarda las decisiones, las herramientas conectan web/GitHub/MCP y los permisos determinan qué puede hacer. Meridian une esas piezas y deja un resultado que se puede construir, probar y revisar.
 
 Si vamos a llevar esto lejos, Silicon Valley está en la mira. Pero para llegar ahí no basta con generar código en segundos. Necesitamos agentes que entiendan el contexto, que sepan cuándo investigar y que nos ayuden a crear productos con intención.
 
