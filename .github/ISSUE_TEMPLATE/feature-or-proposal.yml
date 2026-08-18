@@ -1,0 +1,40 @@
+name: Feature or architecture proposal
+description: Propose a public-facing Meridian improvement, experiment, or architecture idea.
+title: "[Proposal]: "
+labels:
+  - enhancement
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping shape Meridian. Keep this proposal public-safe: do not include private source code, credentials, production configuration, customer data, or internal URLs.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What should Meridian improve or make possible?
+      placeholder: Describe the user, developer, or community problem.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed public solution
+      description: Describe the public contract, documentation, workflow, or experiment.
+    validations:
+      required: true
+  - type: textarea
+    id: contribution
+    attributes:
+      label: How could the community help?
+      description: Suggest a focused first contribution or research step.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-safety review
+      options:
+        - label: I have not included secrets, credentials, private source code, customer data, or internal URLs.
+          required: true
+        - label: I understand this repository follows the Zero-Code Exposure policy.
+          required: true
