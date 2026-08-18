@@ -1,168 +1,187 @@
 # Meridian
 
-> **The Operating System for AI Agents.**  
-> **El Sistema Operativo de los Agentes de IA.**
+> The operating system for AI agents.
 
-[![Community](https://img.shields.io/badge/community-open%20to%20builders-334FB4?style=flat-square)](https://github.com/christiandejesus320-droid/Meridian-Open-Source/discussions)
-[![Documentation](https://img.shields.io/badge/docs-coming%20soon-c0c0c0?style=flat-square)](https://github.com/christiandejesus320-droid/Meridian-Open-Source)
-[![License](https://img.shields.io/badge/license-Apache--2.0-111111?style=flat-square)](LICENSE)
+Estoy construyendo Meridian porque creo que los agentes de IA todavía están demasiado encerrados en una conversación. Pueden responder, pero muchas veces no tienen contexto suficiente, no saben qué permisos tienen y no cuentan con un espacio real donde organizar el trabajo.
 
-Meridian is a community-driven initiative to make AI agents useful beyond the chat window: organized, permission-aware, connected to real systems, and capable of turning intent into accountable execution.
+Meridian nace para cambiar eso. La idea es crear un sistema donde las personas puedan trabajar junto a agentes que entienden el contexto, usan herramientas, respetan límites y convierten una intención en una acción que se puede revisar.
 
-Meridian es una iniciativa impulsada por la comunidad para llevar los agentes de IA más allá de la ventana de chat: organizados, conscientes de los permisos, conectados a sistemas reales y capaces de convertir la intención en ejecución verificable.
+No quiero construir otro chatbot. Quiero construir una base para la próxima generación de software: páginas, proyectos, conocimiento, automatizaciones y agentes trabajando en el mismo lugar.
 
----
+Hay otra parte del problema que para mí es todavía más humana. Muchas personas tienen una idea grande, pero les cuesta explicarla. A veces da miedo contarla porque la IA responde rápido, dice que entendió y empieza a construir algo que en realidad no era lo que queríamos.
 
-## English
+```mermaid
+flowchart LR
+    I["Muchas ideas"]:::ideas --> M{"¿De verdad me entendió?"}:::doubt
+    M -->|Puede fallar| F["La IA asiente\npero interpreta otra cosa"]:::risk
+    M -->|Meridian| L["Escuchar\npreguntar y confirmar"]:::listen
+    L --> C["Intención confirmada"]:::confirm
+    C --> B["Construir con contexto"]:::build
 
-### Vision
+    classDef ideas fill:#7c3aed,stroke:#ddd6fe,color:#ffffff,stroke-width:3px;
+    classDef doubt fill:#db2777,stroke:#f9a8d4,color:#ffffff,stroke-width:3px;
+    classDef risk fill:#475569,stroke:#cbd5e1,color:#ffffff,stroke-width:2px;
+    classDef listen fill:#0891b2,stroke:#a5f3fc,color:#ffffff,stroke-width:3px;
+    classDef confirm fill:#eab308,stroke:#fef08a,color:#422006,stroke-width:3px;
+    classDef build fill:#16a34a,stroke:#bbf7d0,color:#ffffff,stroke-width:3px;
+    linkStyle default stroke:#94a3b8,stroke-width:2px;
+```
 
-AI should not be another application people have to manage. It should become an operating layer for work: a place where people, agents, knowledge, workflows, and decisions can operate together without losing context or control.
+Meridian no debería fingir que entendió. Primero debe devolver lo que cree haber entendido, hacer preguntas cuando algo esté abierto y esperar confirmación antes de convertir una idea sensible en una solución.
 
-Meridian is being shaped as that operating layer. It brings structured workspaces, agent capabilities, governed automations, and human approval into one coherent system. The goal is not to replace people. The goal is to give people a higher-leverage interface for thinking, building, and operating.
+## La IA está cómoda y eso es un problema
 
-> **Meridian is where AI agents gain context, boundaries, memory, and a path to action.**
+Llevo tiempo pensando en algo que veo cada vez más: la IA puede escribir código con mucha velocidad, pero demasiadas veces empieza a construir antes de entender realmente el problema.
 
-### What We Are Building
+Le pedimos una landing page y entrega una landing page promedio. Le pedimos una aplicación y propone una arquitectura basada en los patrones que recuerda. Le pedimos una automatización y conecta dos servicios sin detenerse a preguntar qué debería pasar si algo falla. El resultado puede compilar y aun así sentirse vacío, genérico o poco pensado para las personas que lo van a usar.
 
-Meridian explores a modular platform for agent-native workspaces:
+El problema no es que la IA no sepa programar. El problema es que se está volviendo demasiado cómoda. No investiga lo suficiente, no hace las preguntas importantes y muchas veces no revisa qué soluciones existen ahora mismo en la web, en GitHub o en la documentación oficial.
 
-| Layer | Purpose |
-|---|---|
-| Workspaces | Organize pages, projects, tasks, knowledge, and decisions in one operating context. |
-| Agent Runtime | Give agents explicit capabilities, scoped access, and auditable actions. |
-| Knowledge Layer | Connect structured data, documents, blocks, and operational context. |
-| Integration Layer | Use MCP and secure connectors to reach the tools teams already use. |
-| Governance Layer | Keep humans in control through permissions, approvals, logs, and safe defaults. |
+El vibe coding es impresionante porque nos permite pasar de una idea a un prototipo en muy poco tiempo. Pero también puede crear un bucle de soluciones promedio: pedimos algo, la IA genera una versión que parece correcta y terminamos aceptando una interfaz que se parece a miles de interfaces más.
 
-### Tech Stack
+Yo no quiero una IA que solamente repita lo que ya aprendió. Quiero una compañera de desarrollo que sepa hacer una pausa, entender qué intentamos conseguir, investigar las opciones disponibles y preguntarnos qué dirección tiene más sentido antes de comenzar a escribir archivos.
 
-Meridian is designed around an open, composable stack. The public repository documents the architecture and community contracts; it does **not** contain the private engine or production source code.
+## La idea que quiero construir con Meridian
 
-| Technology | Role in the Meridian architecture |
-|---|---|
-| Supabase | Auth, Postgres data, storage, realtime primitives, and secure project infrastructure. |
-| Prisma | Typed data access, schema discipline, migrations, and safe domain boundaries. |
-| MCP | A connector protocol for giving agents structured access to tools and services. |
-| TypeScript | Shared contracts across the product, agent capabilities, and integrations. |
-| Next.js | Product surfaces, documentation experiences, and server-rendered application boundaries. |
-| GitHub + Vercel | Community collaboration, continuous delivery, previews, and public project visibility. |
+Meridian es el lugar donde quiero explorar esa idea. Un agente debería poder entender la petición, decidir si necesita información actual, investigar en paralelo en la web, en documentación y en GitHub, comparar fuentes, descartar soluciones débiles o abandonadas y explicar sus decisiones antes de construir.
 
-### Roadmap 2026
+No todas las preguntas necesitan una investigación larga. Para algo sencillo, el agente debe responder directamente. Pero cuando hablamos de diseño, código, librerías, arquitectura, seguridad, integraciones o decisiones que pueden afectar el producto, investigar debería ser una capacidad interna y no una instrucción que el usuario tenga que repetir cada vez.
 
-| Quarter | Focus | Community outcome |
-|---|---|---|
-| Q1 | Public architecture | Publish the Meridian mental model, core terminology, and contribution pathways. |
-| Q2 | Agent capabilities | Define capability contracts, permission scopes, tool boundaries, and evaluation practices. |
-| Q3 | MCP ecosystem | Build connector patterns and reference integrations for agent-native workflows. |
-| Q4 | Community network | Launch public experiments, contributor programs, showcases, and a Silicon Valley-facing demo narrative. |
+El flujo que imagino es sencillo: recibir la petición, decidir qué necesita verificar, investigar cuando sea necesario, validar lo encontrado, construir una solución, probarla y explicar por qué tomó esas decisiones. La investigación no debería convertirse en una pausa eterna; las fuentes deberían revisarse al mismo tiempo y resumirse solo en lo necesario para actuar.
 
-The roadmap is directional. We will prioritize durable primitives, transparent decisions, and useful demonstrations over vanity features.
+Eso es lo que quiero mejorar en Meridian. No quedarme criticando que la IA produce cosas genéricas, sino construir agentes que hagan mejores preguntas, busquen referencias actuales, revisen repositorios mantenidos, entiendan la documentación y trabajen con el usuario antes de tomar decisiones importantes.
 
-### How to Join the Movement
+```mermaid
+flowchart LR
+    A(("01 · IDEA")):::hero --> B{"¿INVESTIGAR?"}:::decision
+    B -->|No| C["Responder"]:::direct
+    B -->|Sí| R["Investigar"]:::research
+    R --> V["Comparar\nweb · GitHub · docs"]:::validate
+    V --> Q{"¿FALTA ALGO?"}:::decision
+    Q -->|Sí| H["Preguntar"]:::human
+    Q -->|No| X["Construir"]:::build
+    H --> X
+    C --> X
+    X --> T["Probar"]:::test --> E(("Explicar")):::finish
 
-You do not need access to the private engine to contribute to Meridian. The public community is where we develop the ideas, standards, experiments, documentation, integrations, and feedback loops that make the system stronger.
+    classDef hero fill:#6d28d9,stroke:#ddd6fe,color:#ffffff,stroke-width:4px;
+    classDef decision fill:#db2777,stroke:#f9a8d4,color:#ffffff,stroke-width:3px;
+    classDef direct fill:#475569,stroke:#cbd5e1,color:#ffffff,stroke-width:3px;
+    classDef research fill:#0891b2,stroke:#a5f3fc,color:#ffffff,stroke-width:3px;
+    classDef validate fill:#f97316,stroke:#fed7aa,color:#ffffff,stroke-width:3px;
+    classDef human fill:#ec4899,stroke:#fbcfe8,color:#ffffff,stroke-width:3px;
+    classDef build fill:#16a34a,stroke:#bbf7d0,color:#ffffff,stroke-width:4px;
+    classDef test fill:#0f766e,stroke:#99f6e4,color:#ffffff,stroke-width:3px;
+    classDef finish fill:#f43f5e,stroke:#fecdd3,color:#ffffff,stroke-width:4px;
+    linkStyle default stroke:#94a3b8,stroke-width:3px;
+```
 
-Start by reading the documentation, opening a discussion, proposing a use case, improving terminology, sharing an MCP integration pattern, or helping us test an agent workflow. If you are a builder, researcher, designer, product thinker, security practitioner, or operator, there is a place for your perspective.
 
-1. **Watch the repository** to follow the public roadmap.
-2. **Start a Discussion** with a use case, question, or architecture proposal.
-3. **Open an issue** only when the problem is specific, reproducible, and documented.
-4. **Read `CONTRIBUTING.md`** before submitting a pull request.
-5. **Respect the Zero-Code Exposure policy:** do not request, publish, infer, or reconstruct private engine code, credentials, production configuration, or user data.
 
-### Zero-Code Exposure
+Este es el flujo que quiero que Meridian haga natural. No se trata de investigar todo siempre. Se trata de saber cuándo hace falta investigar y hacerlo rápido, con varias fuentes al mismo tiempo, antes de inventar una solución.
 
-This repository is the **Public Face** of Meridian. It exists to attract builders and make the vision legible without exposing the proprietary engine.
+## Cómo se conectan las piezas
 
-The public surface may contain documentation, architectural concepts, community standards, examples that are intentionally self-contained, issue templates, and non-sensitive diagrams. It must never contain private application source, secrets, production environment variables, database dumps, customer data, internal URLs, credentials, or copied files from private repositories.
+La investigación es solo una parte. Para que un agente pueda trabajar de verdad necesita estar conectado a un espacio, tener contexto, usar herramientas con permisos claros y saber cuándo debe pedir aprobación.
 
-Security reports should be handled privately according to the process described in `SECURITY.md` when that file is published.
+```mermaid
+flowchart LR
+    U["PERSONA\nintención"]:::person <--> W["WORKSPACE\npáginas y proyectos"]:::workspace
+    C["CONTEXTO"]:::context --> M(("MERIDIAN\nAGENT OS")):::core
+    W --> M
+    K["MEMORIA"]:::memory --> M
+    P["PERMISOS"]:::permission --> M
+    T["TOOLS\nWeb · GitHub · MCP"]:::tools --> M
+    M --> A["APROBACIÓN\nsi hace falta"]:::approval
+    M --> R["CONSTRUIR → PROBAR → EXPLICAR"]:::result
+    A -. "la persona siempre puede intervenir" .-> U
 
----
+    classDef person fill:#db2777,stroke:#f9a8d4,color:#ffffff,stroke-width:3px;
+    classDef workspace fill:#16a34a,stroke:#bbf7d0,color:#ffffff,stroke-width:3px;
+    classDef context fill:#2563eb,stroke:#bfdbfe,color:#ffffff,stroke-width:3px;
+    classDef core fill:#f97316,stroke:#fed7aa,color:#ffffff,stroke-width:5px;
+    classDef memory fill:#7c3aed,stroke:#ddd6fe,color:#ffffff,stroke-width:3px;
+    classDef permission fill:#e11d48,stroke:#fecdd3,color:#ffffff,stroke-width:3px;
+    classDef tools fill:#0891b2,stroke:#a5f3fc,color:#06202a,stroke-width:3px;
+    classDef approval fill:#c026d3,stroke:#f5d0fe,color:#ffffff,stroke-width:3px;
+    classDef result fill:#ca8a04,stroke:#fef08a,color:#422006,stroke-width:3px;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+```
 
-## Español
 
-### Visión
 
-La IA no debería ser otra aplicación que las personas tienen que administrar. Debería convertirse en una capa operativa para el trabajo: un espacio donde personas, agentes, conocimiento, flujos y decisiones puedan funcionar juntos sin perder contexto ni control.
+La idea es que el agente no sea una caja que recibe una orden y escupe código. Debe trabajar dentro de un sistema: entender el contexto, recordar las decisiones, usar las herramientas correctas, respetar permisos, consultar a la persona y dejar un resultado que se pueda revisar.
 
-Meridian se está construyendo como esa capa operativa. Reúne espacios de trabajo estructurados, capacidades de agentes, automatizaciones gobernadas y aprobación humana en un sistema coherente. El objetivo no es reemplazar a las personas, sino ofrecerles una interfaz de mayor apalancamiento para pensar, construir y operar.
+Si vamos a llevar esto lejos, Silicon Valley está en la mira. Pero para llegar ahí no basta con generar código en segundos. Necesitamos agentes que entiendan el contexto, que sepan cuándo investigar y que nos ayuden a crear productos con intención.
 
-> **Meridian es el lugar donde los agentes de IA obtienen contexto, límites, memoria y un camino seguro hacia la acción.**
+## Por qué Meridian
 
-### Qué estamos construyendo
+Un agente útil necesita más que un buen modelo. Necesita memoria, estructura, permisos, herramientas y una forma clara de saber cuándo debe pedir aprobación.
 
-Meridian explora una plataforma modular para espacios de trabajo nativos de agentes:
+Por eso Meridian está pensado como un operating system para agentes. El usuario mantiene el control, pero no tiene que repetir el contexto cada vez que quiere hacer algo. El trabajo queda organizado y el agente puede participar de una manera más natural.
 
-| Capa | Propósito |
-|---|---|
-| Espacios de trabajo | Organizar páginas, proyectos, tareas, conocimiento y decisiones en un mismo contexto operativo. |
-| Runtime de agentes | Dar a los agentes capacidades explícitas, acceso limitado y acciones auditables. |
-| Capa de conocimiento | Conectar datos estructurados, documentos, bloques y contexto operacional. |
-| Capa de integraciones | Usar MCP y conectores seguros para llegar a las herramientas que los equipos ya utilizan. |
-| Capa de gobernanza | Mantener a las personas en control mediante permisos, aprobaciones, registros y valores seguros por defecto. |
+La visión es sencilla:
 
-### Stack tecnológico
+- un espacio de trabajo donde todo tenga contexto;
+- agentes con capacidades definidas y límites claros;
+- conexiones con las herramientas que ya usamos;
+- acciones que puedan auditarse y revisarse;
+- una comunidad que ayude a definir cómo debería funcionar este nuevo tipo de software.
 
-Meridian está diseñado alrededor de un stack abierto y componible. El repositorio público documenta la arquitectura y los contratos de comunidad; **no contiene el motor privado ni el código fuente de producción**.
+## Qué hay aquí
 
-| Tecnología | Función en la arquitectura Meridian |
-|---|---|
-| Supabase | Autenticación, datos en Postgres, almacenamiento, primitivas realtime e infraestructura segura. |
-| Prisma | Acceso tipado a datos, disciplina de esquema, migraciones y límites de dominio seguros. |
-| MCP | Protocolo de conectores para dar a los agentes acceso estructurado a herramientas y servicios. |
-| TypeScript | Contratos compartidos entre producto, capacidades de agentes e integraciones. |
-| Next.js | Superficies de producto, experiencias de documentación y límites server-rendered. |
-| GitHub + Vercel | Colaboración comunitaria, entrega continua, previews y visibilidad pública del proyecto. |
+Este repositorio es la parte pública de Meridian. Aquí voy a compartir la visión, decisiones de arquitectura, documentación, ideas, experimentos y formas de colaborar.
 
-### Roadmap 2026
+El motor privado de Meridian vive separado. No voy a publicar código propietario, credenciales, configuraciones de producción, datos de usuarios ni archivos internos. La comunidad puede ayudar a construir el lenguaje, los estándares y los experimentos públicos sin necesitar acceso al producto privado.
 
-| Trimestre | Enfoque | Resultado para la comunidad |
-|---|---|---|
-| T1 | Arquitectura pública | Publicar el modelo mental de Meridian, su terminología y las vías de contribución. |
-| T2 | Capacidades de agentes | Definir contratos de capacidades, scopes de permisos, límites de herramientas y prácticas de evaluación. |
-| T3 | Ecosistema MCP | Crear patrones de conectores e integraciones de referencia para flujos de trabajo nativos de agentes. |
-| T4 | Red comunitaria | Lanzar experimentos públicos, programas para contribuidores, showcases y una narrativa de demo orientada a Silicon Valley. |
+## Cómo está pensado el sistema
 
-El roadmap es orientativo. Priorizaremos primitivas duraderas, decisiones transparentes y demostraciones útiles por encima de funcionalidades de vanidad.
+Meridian se apoya en varias piezas que ya forman parte del stack moderno de aplicaciones con agentes:
 
-### Cómo unirse al movimiento
+- **Supabase** para autenticación, Postgres, almacenamiento y servicios en tiempo real.
+- **Prisma** para mantener los modelos y el acceso a datos tipados.
+- **MCP** para conectar agentes con herramientas de forma estructurada y con permisos definidos.
+- **TypeScript** para compartir contratos claros entre la aplicación, las capacidades y las integraciones.
+- **Next.js** para las superficies de producto y los límites del servidor.
+- **GitHub y Vercel** para colaborar, revisar cambios y publicar la documentación.
 
-No necesitas acceso al motor privado para contribuir a Meridian. La comunidad pública es el lugar donde desarrollamos las ideas, estándares, experimentos, documentación, integraciones y ciclos de feedback que hacen más fuerte al sistema.
+La tecnología importa, pero el problema que quiero resolver importa más: cómo hacer que los agentes sean realmente útiles cuando tienen que trabajar con personas, información y sistemas reales.
 
-Empieza leyendo la documentación, abriendo una discusión, proponiendo un caso de uso, mejorando la terminología, compartiendo un patrón de integración MCP o ayudándonos a probar un flujo de agentes. Si eres desarrollador, investigador, diseñador, estratega de producto, especialista en seguridad u operador, tu perspectiva tiene un lugar.
+## Roadmap 2026
 
-1. **Sigue el repositorio** para recibir el roadmap público.
-2. **Abre una Discussion** con un caso de uso, una pregunta o una propuesta de arquitectura.
-3. **Abre un issue** solo cuando el problema sea específico, reproducible y esté documentado.
-4. **Lee `CONTRIBUTING.md`** antes de enviar un pull request.
-5. **Respeta la política Zero-Code Exposure:** no solicites, publiques, infieras ni reconstruyas código privado del motor, credenciales, configuración de producción o datos de usuarios.
+Durante 2026 quiero concentrarme en cuatro cosas:
 
-### Zero-Code Exposure
+1. Explicar con claridad el modelo de Meridian y publicar una arquitectura que la comunidad pueda discutir.
+2. Definir cómo se describen las capacidades de un agente, qué permisos necesita y cuándo una acción requiere aprobación humana.
+3. Crear patrones de integración con MCP que sean fáciles de entender, probar y adaptar.
+4. Formar una comunidad de desarrolladores que pueda experimentar, proponer ideas y ayudar a llevar Meridian a un nivel que pueda llamar la atención en Silicon Valley.
 
-Este repositorio es la **fachada pública** de Meridian. Existe para atraer programadores y hacer legible la visión sin exponer el motor propietario.
+Este roadmap puede cambiar. Prefiero avanzar con fundamentos sólidos y demostraciones útiles antes que llenar el proyecto de funcionalidades que no resuelven un problema real.
 
-La superficie pública puede contener documentación, conceptos de arquitectura, estándares de comunidad, ejemplos autocontenidos de forma intencional, plantillas de issues y diagramas no sensibles. Nunca debe contener código privado de la aplicación, secretos, variables de entorno de producción, volcados de base de datos, datos de clientes, URLs internas, credenciales ni archivos copiados desde repositorios privados.
+## Cómo puedes ayudar
 
-Los reportes de seguridad deben manejarse de forma privada según el proceso descrito en `SECURITY.md` cuando ese archivo sea publicado.
+No necesitas acceso al motor privado para empezar. Si te interesa la idea, puedes abrir una Discussion con un caso de uso, proponer una mejora para la documentación, compartir un patrón de MCP, ayudar a definir una capacidad de agente o mejorar la experiencia de quienes llegan por primera vez.
 
----
+Si encuentras un problema concreto en este repositorio, abre un Issue. Las tareas marcadas como `good first issue` están pensadas para comenzar sin conocer todo el proyecto. Las que tienen `help wanted` son ideas donde me gustaría recibir ayuda de otros desarrolladores.
 
-## Public-Face principles
+Antes de enviar un pull request, revisa `CONTRIBUTING.md`. Las propuestas deben ser públicas, autocontenidas y fáciles de entender sin acceder al motor privado.
 
-Meridian-Open-Source is a documentation-first repository. It is intentionally separate from the private application repository. A strong public community does not require exposing the engine; it requires making the vision, boundaries, contribution paths, and technical vocabulary clear.
+## Zero-Code Exposure
 
-Meridian-Open-Source es un repositorio orientado primero a la documentación. Está separado intencionalmente del repositorio privado de la aplicación. Una comunidad pública sólida no requiere exponer el motor; requiere hacer clara la visión, los límites, las vías de contribución y el vocabulario técnico.
+Esta regla es importante para Meridian: el repositorio público no es una copia incompleta de la aplicación privada.
+
+No publiques API keys, tokens, passwords, archivos `.env`, dumps de bases de datos, datos de usuarios, URLs internas, logs de producción, configuraciones privadas ni código del motor. Tampoco intentes reconstruir o inferir partes privadas de la aplicación a partir de su comportamiento.
+
+Si encuentras un problema de seguridad, no lo publiques en un Issue. Revisa `SECURITY.md` y contacta de forma privada.
+
+## Únete
+
+Si te interesa hacia dónde va el software con agentes, quédate cerca. Mira el roadmap, abre una conversación, propone un experimento o ayúdame a mejorar la forma en que contamos esta idea.
+
+Meridian está empezando, y precisamente por eso las buenas ideas todavía pueden cambiar mucho de lo que estamos construyendo.
+
+[Discussions](https://github.com/christiandejesus320-droid/Meridian-Open-Source/discussions) · [Issues](https://github.com/christiandejesus320-droid/Meridian-Open-Source/issues) · [Contributing](CONTRIBUTING.md)
 
 ## License
 
-Apache License 2.0. See [`LICENSE`](LICENSE).
-
-## References
-
-- [Model Context Protocol](https://modelcontextprotocol.io/)
-- [Supabase](https://supabase.com/)
-- [Prisma](https://www.prisma.io/)
-- [Next.js](https://nextjs.org/)
-- [GitHub Discussions](https://docs.github.com/en/discussions)
+Apache 2.0. Revisa [`LICENSE`](LICENSE).
