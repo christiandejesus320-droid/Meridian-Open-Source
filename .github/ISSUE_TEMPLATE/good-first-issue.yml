@@ -1,0 +1,47 @@
+name: Good first issue
+description: A focused, well-scoped task for a first-time Meridian contributor.
+title: "[Good First Issue]: "
+labels:
+  - good first issue
+  - help wanted
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome. This task is intentionally scoped for a first contribution to Meridian's public community surface.
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+      description: What should be improved or created?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Link to the relevant README section, discussion, or public concept.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Definition of done
+      description: What should be true when this issue is complete?
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Helpful notes
+      description: Include terminology, public references, or suggested files. Never include private implementation details.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-safety review
+      options:
+        - label: This task can be completed without private engine access.
+          required: true
+        - label: I have not included secrets, credentials, private source code, customer data, or internal URLs.
+          required: true
